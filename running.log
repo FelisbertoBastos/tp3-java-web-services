@@ -1,0 +1,17 @@
+18:16:49.931 490  [main] INFO  org.example.system.SchoolSystem - Iniciando o cadastro
+18:17:35.086 45645 [main] ERROR org.example.system.SchoolSystem - Usuário digitou nome do curso inválido
+18:18:02.197 72756 [main] ERROR org.example.system.SchoolSystem - Usuário digitou nome do professor inválido
+18:18:11.918 82477 [main] ERROR org.example.system.SchoolSystem - Usuário digitou nome de aluno inválido
+18:18:16.877 87436 [main] INFO  org.example.system.SchoolSystem - Finalizando o cadastro
+18:27:12.242 374  [main] INFO  org.example.system.SchoolSystem - Iniciando o cadastro
+18:27:34.591 22723 [main] INFO  org.example.system.SchoolSystem - Finalizando o cadastro
+18:28:43.917 362  [main] INFO  org.example.system.SchoolSystem - Iniciando o cadastro
+18:28:48.792 5237 [main] DEBUG org.example.system.SchoolSystem - Usuário digitou o nome do curso: Comp
+18:29:15.121 31566 [main] DEBUG org.example.system.SchoolSystem - Usuário digitou o nome do professor: João
+18:29:25.430 41875 [main] DEBUG org.example.system.SchoolSystem - Usuário digitou o número de alunos: 4
+18:29:28.112 44557 [main] DEBUG org.example.system.SchoolSystem - Usuário digitou o nome do aluno: qqqqqq
+18:29:30.008 46453 [main] DEBUG org.example.system.SchoolSystem - Usuário digitou o nome do aluno: wwwwwww
+18:29:31.615 48060 [main] DEBUG org.example.system.SchoolSystem - Usuário digitou o nome do aluno: eeeeeee
+18:29:33.103 49548 [main] DEBUG org.example.system.SchoolSystem - Usuário digitou o nome do aluno: rrrrrrr
+18:29:33.104 49549 [main] INFO  org.example.system.SchoolSystem - Finalizando o cadastro
+18:29:41.411 369  [main] INFO  org.example.system.SchoolSystem - Iniciando o cadastro
