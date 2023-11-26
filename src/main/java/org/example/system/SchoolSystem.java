@@ -1,45 +1,69 @@
 package org.example.system;
 
-import org.example.people.Student;
 import org.example.people.Teacher;
 import org.example.subject.Course;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class SchoolSystem {
     public void run() {
-        System.out.println("--- Cadastro de Curso ---");
-
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Nome do curso: ");
-        String courseName = scanner.nextLine();
+        System.out.println("--- Cadastro de Curso ---");
 
-        System.out.print("Nome do professor: ");
-        String teacherName = scanner.nextLine();
+        Course course = new Course();
 
-        Teacher teacher = new Teacher(teacherName);
-        Course course = new Course(courseName, teacher);
+        while (true) {
+            try {
+                System.out.print("Nome do curso: ");
+                String courseName = scanner.nextLine();
+                course.setName(courseName);
+                break;
+            } catch (IllegalArgumentException exception) {
+                System.out.println("Nome inválido");
+            }
+        }
 
-        System.out.print("N° de alunos: ");
-        int numberOfStudents = scanner.nextInt();
-        scanner.nextLine();
+        while (true) {
+            try {
+                System.out.print("Nome do professor: ");
+                String teacherName = scanner.nextLine();
+                Teacher teacher = new Teacher(teacherName);
+                course.setTeacher(teacher);
+                break;
+            } catch (IllegalArgumentException exception) {
+                System.out.println("Nome do professor inválido");
+            }
+        }
+
+        int numberOfStudents;
+        while (true) {
+            try {
+                System.out.print("N° de alunos: ");
+                numberOfStudents = scanner.nextInt();
+                break;
+            } catch (InputMismatchException exception) {
+                System.out.println("Digite o número de alunos");
+            } finally {
+                scanner.nextLine();
+            }
+        }
 
         for (int i = 0; i < numberOfStudents; i++) {
-            System.out.printf("%d° aluno: ", i + 1);
-            Student student = new Student(scanner.nextLine());
-            course.getStudents().add(student);
+            while (true) {
+                try {
+                    System.out.printf("%d° aluno: ", i + 1);
+                    course.addStudent(scanner.nextLine());
+                    break;
+                } catch (IllegalArgumentException exception) {
+                    System.out.println("Nome do aluno inválido");
+                }
+            }
         }
 
         System.out.println("\n--- Dados do Curso ---");
 
-        System.out.println("Nome: " + course.getName());
-        System.out.println("Professor: " + course.getTeacher().getName());
-
-        System.out.println("Alunos:");
-
-        for (int i = 0; i < course.getStudents().size(); i++) {
-            System.out.println(" - " + course.getStudents().get(i).getName());
-        }
+        System.out.println(course.getDetails());
     }
 }

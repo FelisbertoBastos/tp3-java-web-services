@@ -12,6 +12,6 @@ public class Student extends People {
     public Student(String name) {
         super(name);
 
-        this.grades = new ArrayList<Float>();
+        this.grades = new ArrayList<>();
     }
 }
